@@ -1,0 +1,37 @@
+﻿
+
+
+@model List<string>
+
+
+<div class="container">
+    @using (Html.BeginForm("Index", "Documents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="form-group col-md-6">
+                <input type="file" class="form-control" name="mydoc" />
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" name="filesubmit" value="Upload" />
+            </div>
+
+        </div>
+
+    }
+
+    <div class="row">
+        @if (Model != null)
+        {
+        @foreach (var ipath in Model)
+        {
+            <div class="col-md-3">
+                <div class="alert alert-success" role="alert">
+                    <a href="/Documents/Download/?filePath=@ipath">
+                        <img src="~/@ipath" height="100px" width="100px" />
+                    </a>
+                </div>
+            </div>
+        }}
+    </div>
+
+</div>

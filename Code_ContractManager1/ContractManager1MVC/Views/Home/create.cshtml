@@ -1,0 +1,199 @@
+﻿@model ContractManager1MVC.Models.ContractDetail
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<body class="view" style="background-image: url('https://www.pngmagic.com/product_images/light-gray-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; ">
+
+
+    <form asp-action="create">
+        <div class="container  w-50 p-2">
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ContractId" class="control-label"></label>
+                    <input asp-for="ContractId " class="form-control" onchange="fnSaveData()" id="ContractId" />
+                    <span asp-validation-for="ContractId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkerName" class="control-label"></label>
+                    <input asp-for="WorkerName" class="form-control" onchange="fnSaveData()" id="WorkerName" />
+                    <span asp-validation-for="WorkerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkerNumber" class="control-label"></label>
+                    <input asp-for="WorkerNumber" class="form-control" onchange="fnSaveData()" id="WorkerNumber" />
+                    <span asp-validation-for="WorkerNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Gender" class="control-label"></label><br />
+                    <select asp-for="Gender" class="form-group col-md-12" onchange="fnSaveData()" id="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer Not To Say">Prefer Not To Say</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" onchange="fnSaveData()" id="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="CurrentAddress" class="control-label"></label>
+                    <input asp-for="CurrentAddress" class="form-control" onchange="fnSaveData()" id="CurrentAddress" />
+                    <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Domain" class="control-label"></label><br />
+                    <select asp-items="@ViewBag.JobType" asp-for="Domain" class="form-group col-md-12" onchange="fnSaveData()" id="Domain">
+                        <option value="0" id="Domain" onchange="fnSaveData()">Select Job Type</option>
+                    </select>
+                    <span asp-validation-for="Domain" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Project" class="control-label"></label>
+                    <input asp-for="Project" class="form-control" onchange="fnSaveData()" id="Project" />
+                    <span asp-validation-for="Project" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkLocation" class="control-label"></label>
+                    <input asp-for="WorkLocation" class="form-control" onchange="fnSaveData()" id="WorkLocation" />
+                    <span asp-validation-for="WorkLocation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" onchange="fnSaveData()" id="Amount" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="StartDatee" class="control-label"></label>
+                    <input asp-for="StartDatee" class="form-control" onchange="fnSaveData()" id="StartDatee"  />
+                    <span asp-validation-for="StartDatee" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="EndDate" class="control-label"></label>
+                    <input asp-for="EndDate" class="form-control" onchange="fnSaveData()" id="EndDate" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">                
+                <div class="form-group col-md-12">
+                    <label asp-for="DescriptionDetails" class="control-label"></label>
+                    <input asp-for="DescriptionDetails" class="form-control" onchange="fnSaveData()" id="DescriptionDetails" />
+                    <span asp-validation-for="DescriptionDetails" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class=" form-group col-md-4 btn-lg">
+                    <input type="submit" value="Register" class="btn btn-primary btn-lg btn-block" onclick="subclearr() " />
+                </div>
+                <div class=" form-group col-md-4 btn-lg">
+                    <input type="button" value="Clear"  class="btn btn-danger btn-lg btn-block" onclick="clearr()" />
+                </div>
+                <div class=" form-group col-md-4 btn-lg">
+                    <input type="button" value="Save"  class="btn btn-success btn-lg btn-block" onclick="fnSaveData()" />
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                var today = new Date();
+                var month = today.getMonth() + 1;
+                var day = today.getDate();
+                var year = today.getFullYear();
+                if (month < 10)
+                    month = '0' + month.toString();
+                if (day < 10)
+                    day = '0' + day.toString();
+                var maxdate = year + '-' + month + '-' + day;
+                $("#StartDatee").attr('min', maxdate);
+                $("#EndDate").attr('min', maxdate);
+            });
+
+        });
+
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    function fnSaveData() {
+        window.localStorage.setItem("ContractId", document.getElementById("ContractId").value);
+        window.localStorage.setItem("WorkerName", document.getElementById("WorkerName").value);
+        window.localStorage.setItem("WorkerNumber", document.getElementById("WorkerNumber").value);
+        window.localStorage.setItem("Gender", document.getElementById("Gender").value);
+        /*window.localStorage.setItem("DateOfBirth", document.getElementById("DateOfBirth").value);*/
+        window.localStorage.setItem("CurrentAddress", document.getElementById("CurrentAddress").value);
+        window.localStorage.setItem("Domain", document.getElementById("Domain").value);
+        window.localStorage.setItem("Project", document.getElementById("Project").value);
+        window.localStorage.setItem("WorkLocation", document.getElementById("WorkLocation").value);
+        window.localStorage.setItem("Amount", document.getElementById("Amount").value);
+        window.localStorage.setItem("StartDatee", document.getElementById("StartDatee").value);
+        window.localStorage.setItem("EndDate", document.getElementById("EndDate").value);
+        window.localStorage.setItem("Email", document.getElementById("Email").value);
+        window.localStorage.setItem("DescriptionDetails", document.getElementById("DescriptionDetails").value);
+
+
+
+
+
+
+
+    }
+  
+
+    window.onload = function () {
+
+
+        document.getElementById("ContractId").value = window.localStorage.getItem("ContractId");
+        document.getElementById("WorkerName").value = window.localStorage.getItem("WorkerName");
+        document.getElementById("WorkerNumber").value = window.localStorage.getItem("WorkerNumber");
+        document.getElementById("Gender").value = window.localStorage.getItem("Gender");
+        /*document.getElementById("DateOfBirth").value = window.localStorage.getItem("DateOfBirth");*/
+        document.getElementById("CurrentAddress").value = window.localStorage.getItem("CurrentAddress");
+        document.getElementById("Domain").value = window.localStorage.getItem("Domain");
+        document.getElementById("Project").value = window.localStorage.getItem("Project");
+        document.getElementById("WorkLocation").value = window.localStorage.getItem("WorkLocation");
+        document.getElementById("Amount").value = window.localStorage.getItem("Amount");
+        document.getElementById("StartDatee").value = window.localStorage.getItem("StartDatee");
+        document.getElementById("EndDate").value = window.localStorage.getItem("EndDate");
+        document.getElementById("Email").value = window.localStorage.getItem("Email");
+        document.getElementById("DescriptionDetails").value = window.localStorage.getItem("DescriptionDetails");
+
+
+
+
+
+
+
+
+    }
+    function clearr() {
+        localStorage.clear();
+        location.reload();
+    }
+    function subclearr() {
+        localStorage.clear();
+    }
+
+
+</script>
+

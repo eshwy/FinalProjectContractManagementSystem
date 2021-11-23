@@ -1,0 +1,113 @@
+﻿@model ContractManager1MVC.Models.ContractDetail
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<body class="view" style="background-image: url('https://www.pngmagic.com/product_images/light-gray-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; ">
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container  w-50 p-2">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ContractId" class="control-label"></label>
+                    <input asp-for="ContractId" class="form-control" />
+                    <span asp-validation-for="ContractId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkerName" class="control-label"></label>
+                    <input asp-for="WorkerName" class="form-control" />
+                    <span asp-validation-for="WorkerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkerNumber" class="control-label"></label>
+                    <input asp-for="WorkerNumber" class="form-control" />
+                    <span asp-validation-for="WorkerNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Gender" class="control-label"></label><br />
+                    <select asp-for="Gender" class="form-group col-md-12">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer Not To Say">Prefer Not To Say</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="CurrentAddress" class="control-label"></label>
+                    <input asp-for="CurrentAddress" class="form-control" />
+                    <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Domain" class="control-label"></label><br />
+                    <input asp-for="Domain" class="form-control"  />
+                    <span asp-validation-for="Domain" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Project" class="control-label"></label>
+                    <input asp-for="Project" class="form-control" />
+                    <span asp-validation-for="Project" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="WorkLocation" class="control-label"></label>
+                    <input asp-for="WorkLocation" class="form-control" />
+                    <span asp-validation-for="WorkLocation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="StartDatee" class="control-label"></label>
+                    <input asp-for="StartDatee" class="form-control" />
+                    <span asp-validation-for="StartDatee" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="EndDate" class="control-label"></label>
+                    <input asp-for="EndDate" class="form-control" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">                
+                <div class="form-group col-md-12">
+                    <label asp-for="DescriptionDetails" class="control-label"></label>
+                    <input asp-for="DescriptionDetails" class="form-control" />
+                    <span asp-validation-for="DescriptionDetails" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row text-center">
+            <div class=" form-group col-md-12 btn-lg text-center">
+                <input type="submit" value="Edit & Save"   class="btn btn-success"/>
+            </div>        
+
+        </div>
+        @*<div class="form-row">
+            <div class=" form-group col-md-6 btn-lg">
+                <input type="submit" value="Save" placeholder="SUBMIT" class="btn btn-primary" />
+            </div>
+        </div>*@
+    </form>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

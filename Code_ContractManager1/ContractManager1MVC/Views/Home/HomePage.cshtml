@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Homepage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!--divinectorweb.com-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap 5 Homepage template | Bootstrap Snippets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="~/css/Homepage.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: montserrat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row px-2">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12 pt-5">
+                <div class="carousel slide pt-5" data-bs-ride="carousel" id="carouselExampleControls">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h1 class="animated fadeInDown" style="animation-delay: 1s">
+                                Contract <span class="text-info"> Management System</span>
+                            </h1>
+                            <p class="animated fadeInUp" style="animation-delay: 2s">
+                                WE AGREE ON YOUR AGREEMENT
+                            </p>
+                            <a class=" btn btn-sm btn-primary text-white"  asp-area="" asp-controller="Home" asp-action="Index" >View list</a>
+
+                            <a class=" btn btn-sm btn-primary text-white" asp-area="" asp-controller="Home" asp-action="create">     Register     </a>
+                        </div>
+                        <div class="carousel-item">
+                            <h1 class="animated fadeInDown" style="animation-delay: 1s">
+                                Contract <span class="text-info"> Management System</span>
+                            </h1>
+                            <p class="animated fadeInUp" style="animation-delay: 2s">
+                                WE VALUE YOUR TRUST
+                            </p>
+                             <a class="btn btn-sm btn-primary text-white"  asp-area="" asp-controller="Home" asp-action="Index" >View list</a>
+                            
+                             <a class="btn btn-sm btn-primary text-white" asp-area="" asp-controller="Home" asp-action="create">     Register     </a>
+                            
+                        </div>
+                        <div class="carousel-item">
+                            <h1 class="animated fadeInDown" style="animation-delay: 1s">
+                                Contract <span class="text-info"> Management System</span>
+                            </h1>
+                            <p class="animated fadeInUp" style="animation-delay: 2s">
+                                WHY FEAR WHEN WE ARE HERE
+                            </p>
+                            <a class=" btn btn-sm btn-primary text-white"  asp-area="" asp-controller="Home" asp-action="Index" >View list</a>
+
+                            <a class=" btn btn-sm btn-primary text-white" asp-area="" asp-controller="Home" asp-action="create">     Register     </a>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+                <img alt="" class="img-fluid"
+                     src="~/Images/business-people.jpg">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h4>
+                “We are continuing to look for ways that we can do something thats good for both of us. <br />
+                Good for both of us being the Cowboys relative to relief as to our cap management and<br />
+                good for him that would maybe be some pluses for him on his contract.”<br />
+            </h4>
+            <h1><b>— Jerry Jones —</b></h1>
+        </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>*@
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

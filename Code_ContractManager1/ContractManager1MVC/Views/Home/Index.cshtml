@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ContractManager1MVC.Models.ContractDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="view" style="background-color:lightblue">
+    <div class="container justify-content-center">
+        <table class="table table-hover table-striped  x-auto w-auto">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContractId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkerName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkerNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkLocation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Domain)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Project)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>
+                    <th>ACTION</th>
+                    
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContractId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WorkerName)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => item.WorkerNumber)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WorkLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Domain)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Project)
+                    </td>                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td class="btn" style="color:white">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ContractId })
+
+                    </td>
+                    <td class="btn" style="color:white">
+                        @Html.ActionLink("Details", "Details", new { email = item.Email })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>

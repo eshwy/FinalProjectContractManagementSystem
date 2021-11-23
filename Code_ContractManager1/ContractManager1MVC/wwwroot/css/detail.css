@@ -1,0 +1,44 @@
+.view-wrap{
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.view-image{
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 40%);
+    /* border-radius: 30px; */
+    width: 420px;
+    height: 620px;
+    align-items: center;
+}
+.profile_image{
+    width:400px;
+    height:610px;
+}
+.view-container {
+    background: rgb(255, 255, 255);
+  
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 40%);
+    /* border-radius: 30px; */
+    width: 550px;
+    align-items: center;
+  }
+  .view-container h1 {
+    /* text-align: center; */
+    color: #012443;
+    padding: 15px;
+  }
+  .view-container h4 {
+    /* text-align: center; */
+    margin-left: 100px;
+    color: #000000;
+    /* padding: 2px; */
+  }
+  
+  .wrap-card{
+    margin-top: 50px;
+    margin-left: 100px;
+}

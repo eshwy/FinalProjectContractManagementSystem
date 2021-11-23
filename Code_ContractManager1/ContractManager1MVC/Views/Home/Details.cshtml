@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ContractManager1MVC.Models.ContractDetail>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<body class="view" style="background-color: lightblue ">
+    <div class="container justify-content-center ">
+        <table class="table table-hover table-striped ">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContractId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkerNumber)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Domain)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Project)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartDatee)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class=" bg-gradient-primary text-dark" onload="">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkerNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Domain)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDatee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>                       
+
+                        <td class="btn btn-outline-light">
+                            @Html.ActionLink("Report", "Details1", new { id = item.ContractId })
+                        </td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
